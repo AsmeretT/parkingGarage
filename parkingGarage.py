@@ -8,11 +8,20 @@ class ParkingGarage():
             self.parkingSpaces.append('Space')
 
     def takeTicket(self, tickets, parkingSpaces):
-        pass
+        if tickets:
+            tickets.pop()
+            parkingSpaces.pop()
+        else:
+            print("Sorry, there are no more parking spaces.")
 
     def payForParking(self, currentTicket):
-        pass
-
+        payment = input("Please enter the payment amount")
+        if payment:
+            currentTicket["paid"] = True
+            print("Your ticket has been paid and you have 15 mins to leave.")
+        else: 
+            print("Your response is invalid.")    
+            
     def leaveGarage(self, tickets, parkingSpaces, currentTicket):
         pass
 
