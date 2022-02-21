@@ -9,12 +9,13 @@ class ParkingGarage():
     def takeTicket(self, tickets, parkingSpaces):
         if parkingSpaces:
             tickets.append(parkingSpaces.pop())
+            print("Please take your ticket and proceed to parking.")
         else:
             print("Sorry, there are no more parking spaces.")
 
     def payForParking(self, tickets, currentTicket):
         if tickets and currentTicket['paid'] == False:
-            payment = input("Please enter the payment amount: ")
+            payment = input("Please enter the $dollar payment amount: ")
             if payment:
                 currentTicket["paid"] = True
                 print("Your ticket has been paid and you have 15 mins to leave.")
@@ -48,5 +49,6 @@ class ParkingGarage():
             else:
                 print("Invalid input, please enter 'Park', 'Pay', 'Leave', or 'Quit'.")
 
-# myGarage = ParkingGarage(10)
-# myGarage.run()
+myGarage = ParkingGarage(10)
+myGarage.run()
+            
