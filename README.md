@@ -41,7 +41,8 @@ When the project is completed, commit the final changes, sync all pull requests,
 
 
 ###### List group responsiblities below:
-
+Andrew - run method, leaveGarage method (lines 33 - 60)
+Asmeret - takeTicket method and payForParking method (lines 1 - 32)
 
 
 

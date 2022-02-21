@@ -14,15 +14,21 @@ class ParkingGarage():
             print("Sorry, there are no more parking spaces.")
 
     def payForParking(self, tickets, currentTicket):
-        if tickets and currentTicket['paid'] == False:
-            payment = input("Please enter the $dollar payment amount: ")
-            if payment:
-                currentTicket["paid"] = True
-                print("Your ticket has been paid and you have 15 mins to leave.")
-            else: 
-                print("Your response is invalid.")
-        else:
-            print("There are no tickets to pay for. ")
+        while True:
+            if tickets and currentTicket['paid'] == False:
+                try:
+                    payment = int(input("Please enter the $dollar payment amount: "))
+                    if payment:
+                        currentTicket["paid"] = True
+                        print("Your ticket has been paid and you have 15 mins to leave.")
+                        break
+                    else: 
+                        print("Your response is invalid.")
+                except:
+                    print("Please enter a valid number.")
+            else:
+                print("There are no tickets to pay for. ")
+                break
             
     def leaveGarage(self, tickets, parkingSpaces, currentTicket):
         if tickets:    
@@ -30,6 +36,7 @@ class ParkingGarage():
                 print("Thank you, have a nice day.")
             else:
                 self.payForParking(tickets, currentTicket)
+                print("Thank you, have a nice day.")
             parkingSpaces.append(tickets.pop())
             currentTicket['paid'] = False
         else:
